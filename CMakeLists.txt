@@ -6,6 +6,13 @@ project(lv_demos HOMEPAGE_URL https://github.com/lvgl/lv_demos)
 option(LV_DEMO_CONF_INCLUDE_SIMPLE "Simple include of \"lv_demo_conf.h\"" ON)
 option(LV_LVGL_H_INCLUDE_SIMPLE "Simple include of \"lvgl.h\"" ON)
 
+if(LV_DEMO_CONF_INCLUDE_SIMPLE)
+  add_definitions(-DLV_DEMO_CONF_INCLUDE_SIMPLE)
+endif()
+if(LV_LVGL_H_INCLUDE_SIMPLE)
+  add_definitions(-DLV_LVGL_H_INCLUDE_SIMPLE)
+endif()
+
 # Option to set LV_DEMO_CONF_PATH, if set parent path LV_DEMO_CONF_DIR is added
 # to includes
 option(LV_DEMO_CONF_PATH "Path defined for lv_demo_conf.h")
